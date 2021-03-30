@@ -33,3 +33,23 @@ int BinarySearch(ElemType *array[],ElemType date）
     printf("查找失败，数据不存在\n");
     return -1;
 }
+递归式二分法
+原理：按照条件，查找范围逐步缩小，就是依据二分法的定义做的
+int RecursionBinarySearch(ElemType array[], ElemType dat, int head, int high)
+{
+    int mid = (high+head)/2;
+    if(high<head)
+    {
+        return -1;
+    }
+    if(dat > array[mid])
+    {
+        return RecursionBinarySearch(array,dat,mid+1,high);
+    }
+    else if(dat < array[mid])
+    {
+        return RecursionBinarySearch(array,dat,head,mid-1);
+    }
+    else if(dat == array[mid]) 
+		return mid;
+}
