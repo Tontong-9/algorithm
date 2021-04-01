@@ -39,7 +39,7 @@ int BinarySearch(ElemType *array[],ElemType date）
     return -1;
 }
 递归式二分法
-原理：按照条件，查找范围逐步缩小，就是依据二分法的定义做的
+原理：按照条件，查找范围逐步缩小，就是依据数学里的二分法的定义做的
 int RecursionBinarySearch(ElemType array[], ElemType dat, int head, int high)
 {
     int mid = (high+head)/2;
