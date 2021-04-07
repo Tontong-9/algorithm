@@ -1,0 +1,45 @@
+def selectionsort
+时间复杂度与冒泡排序法一样，但前者的交换次数少了，故而效率较高
+接下来慢慢改进该算法：
+1.数组有重复值怎么改呢？
+2.我觉得它的交换次数还是有点多余，数组能不能再改进呢？
+//适用于数据少的算法
+function selectionSort(arr) 
+  len = arr.length
+  minIndex
+  for i = 0 to len - 1        
+    minIndex = i;
+      for j = i + 1 to len
+         if (arr[j] < arr[minIndex])
+             minIndex = j;
+     swap（arr[i],arr[minIndex]）
+//改进一，避免重复元素     
+function selectionSort(arr) 
+  len = arr.length
+  minIndex
+  for i = 0 to len - 1        
+    minIndex = i;
+      for j = i + 1 to len
+         if (arr[j] < arr[minIndex])
+             minIndex = j;
+    if(minIndex!=i)//避免重复元素
+      swap（arr[i],arr[minIndex]）
+//改进二，利用冒泡排序法改进，增加一个maxIndex，
+function selectionSort(arr) 
+  len = arr.length
+  minIndex,maxIndex
+  for i = 0 to len/2 //同一个游标两个人用    
+    minIndex = i;
+    maxIndex = i;
+      for j = i + 1 to len
+         if (arr[j] < arr[minIndex])
+             minIndex = j;
+             continue;
+         else if(array[j]>array[maxIndex])
+                maxPoint= j;
+    if(minIndex!=i)//避免重复元素
+      swap（arr[i],arr[minIndex]）//与第一个元素交换
+*      if(maxIndex=i)//
+*        maxIndex=minIndex
+    if(maxIndex!=len-1-i)
+      swap(arr[len-1-i],arr[maxIndex])//与最后一个元素交换
