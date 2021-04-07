@@ -1,0 +1,18 @@
+def quicksort
+分治递归
+fuction quicksort（arr，left，right）
+  len = arr.length
+  partitionIndex
+  if（left<right）
+        partitionIndex = partition(arr, left, right);
+        quickSort(arr, left, partitionIndex-1);
+        quickSort(arr, partitionIndex+1, right);
+*  partition(arr,left,right)//选择排序代码块
+        pivot = left,                      // 设定基准值（pivot）
+        index = pivot + 1;
+    for i  range[index,right]  
+        if (arr[i] < arr[pivot]) 
+            swap(arr, i, index);
+            index++
+    swap(arr, pivot, index - 1);
+    return index-1;
